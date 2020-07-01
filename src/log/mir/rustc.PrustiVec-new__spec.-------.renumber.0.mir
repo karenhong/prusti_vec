@@ -1,0 +1,39 @@
+// MIR for `PrustiVec::new__spec`
+// source = MirSource { def_id: DefId(0/0:6 ~ vec_verified[8787]::PrustiVec[0]::new__spec[0]), promoted: None }
+// pass_name = renumber
+// disambiguator = 0
+
+fn PrustiVec::new__spec(_1: std::vec::Vec<T>) -> (){
+    let mut _0: ();                      // return place
+    let mut _2: [closure@/Users/karenhong/prusti-lib-support/src/vec_verified.rs:5:16: 5:33 result:&'4rv std::vec::Vec<T>];
+    let mut _3: &'5rv std::vec::Vec<T>;
+
+    bb0: {                              
+        StorageLive(_3);                 // bb0[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:5:16: 5:33
+        _3 = &'2rv _1;                   // bb0[1]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:5:16: 5:33
+        _2 = [closure@/Users/karenhong/prusti-lib-support/src/vec_verified.rs:5:16: 5:33] { result: move _3 }; // bb0[2]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:5:16: 5:33
+                                         // closure
+                                         // + def_id: DefId(0/1:10 ~ vec_verified[8787]::PrustiVec[0]::new__spec[0]::{{closure}}[0])
+                                         // + substs: ClosureSubsts {
+                                         //     substs: [
+                                         //         Self,
+                                         //         T,
+                                         //         i8,
+                                         //         extern "rust-call" fn(()) -> bool,
+                                         //         &'3rv std::vec::Vec<T>
+                                         //     ]
+                                         // }
+        nop;                             // bb0[3]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:5:16: 5:33
+        StorageDead(_3);                 // bb0[4]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:5:32: 5:33
+        _0 = ();                         // bb0[5]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:6:5: 6:24
+        drop(_1) -> [return: bb2, unwind: bb1]; // bb0[6]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:6:23: 6:24
+    }
+
+    bb1: {                               // cleanup
+        resume;                          // bb1[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:6:5: 6:24
+    }
+
+    bb2: {                              
+        return;                          // bb2[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:6:24: 6:24
+    }
+}

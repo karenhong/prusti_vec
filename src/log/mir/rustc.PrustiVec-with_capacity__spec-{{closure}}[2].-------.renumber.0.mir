@@ -1,0 +1,40 @@
+// MIR for `PrustiVec::with_capacity__spec::{{closure}}`
+// source = MirSource { def_id: DefId(0/1:13 ~ vec_verified[8787]::PrustiVec[0]::with_capacity__spec[0]::{{closure}}[2]), promoted: None }
+// pass_name = renumber
+// disambiguator = 0
+
+fn PrustiVec::with_capacity__spec::{{closure}}(_1: &'8rv [closure@/Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:16: 10:45 result:&'9rv std::vec::Vec<T>, capacity:&'10rv usize]) -> bool{
+    let mut _0: bool;                    // return place
+    let mut _2: usize;
+    let mut _3: &'11rv std::vec::Vec<T>;
+    let mut _4: usize;
+
+    bb0: {                              
+        StorageLive(_2);                 // bb0[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:16: 10:33
+        StorageLive(_3);                 // bb0[1]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:16: 10:22
+        _3 = &'5rv (*((*_1).0: &'6rv std::vec::Vec<T>)); // bb0[2]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:16: 10:22
+        _2 = const <std::vec::Vec<T>>::capacity(move _3) -> [return: bb2, unwind: bb1]; // bb0[3]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:16: 10:33
+                                         // ty::Const
+                                         // + ty: for<'r> fn(&'r std::vec::Vec<T>) -> usize {<std::vec::Vec<T>><T>::capacity}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:16: 10:33
+                                         // + ty: for<'r> fn(&'r std::vec::Vec<T>) -> usize {<std::vec::Vec<T>><T>::capacity}
+                                         // + literal: const <std::vec::Vec<T>>::capacity
+    }
+
+    bb1: {                               // cleanup
+        resume;                          // bb1[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:16: 10:45
+    }
+
+    bb2: {                              
+        nop;                             // bb2[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:16: 10:33
+        StorageDead(_3);                 // bb2[1]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:32: 10:33
+        StorageLive(_4);                 // bb2[2]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:37: 10:45
+        _4 = (*((*_1).1: &'7rv usize));  // bb2[3]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:37: 10:45
+        _0 = Eq(move _2, move _4);       // bb2[4]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:16: 10:45
+        StorageDead(_4);                 // bb2[5]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:44: 10:45
+        StorageDead(_2);                 // bb2[6]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:44: 10:45
+        return;                          // bb2[7]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:10:45: 10:45
+    }
+}

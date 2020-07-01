@@ -1,0 +1,40 @@
+// MIR for `PrustiVec::capacity__spec::{{closure}}`
+// source = MirSource { def_id: DefId(0/1:14 ~ vec_verified[8787]::PrustiVec[0]::capacity__spec[0]::{{closure}}[0]), promoted: None }
+// pass_name = renumber
+// disambiguator = 0
+
+fn PrustiVec::capacity__spec::{{closure}}(_1: &'10rv [closure@/Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:16: 13:36 result:&'11rv usize, self:&'12rv &'13rv Self]) -> bool{
+    let mut _0: bool;                    // return place
+    let mut _2: usize;
+    let mut _3: usize;
+    let mut _4: &'14rv Self;
+
+    bb0: {                              
+        StorageLive(_2);                 // bb0[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:16: 13:22
+        _2 = (*((*_1).0: &'6rv usize));  // bb0[1]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:16: 13:22
+        StorageLive(_3);                 // bb0[2]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:26: 13:36
+        StorageLive(_4);                 // bb0[3]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:26: 13:30
+        _4 = &'7rv (*(*((*_1).1: &'8rv &'9rv Self))); // bb0[4]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:26: 13:30
+        _3 = const PrustiVec::len(move _4) -> [return: bb2, unwind: bb1]; // bb0[5]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:26: 13:36
+                                         // ty::Const
+                                         // + ty: for<'r> fn(&'r Self) -> usize {<Self as PrustiVec<T>>::len}
+                                         // + val: Value(Scalar(Bits { defined: 0, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:26: 13:36
+                                         // + ty: for<'r> fn(&'r Self) -> usize {<Self as PrustiVec<T>>::len}
+                                         // + literal: const PrustiVec::len
+    }
+
+    bb1: {                               // cleanup
+        resume;                          // bb1[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:16: 13:36
+    }
+
+    bb2: {                              
+        nop;                             // bb2[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:26: 13:36
+        StorageDead(_4);                 // bb2[1]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:35: 13:36
+        _0 = Ge(move _2, move _3);       // bb2[2]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:16: 13:36
+        StorageDead(_3);                 // bb2[3]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:35: 13:36
+        StorageDead(_2);                 // bb2[4]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:35: 13:36
+        return;                          // bb2[5]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:13:36: 13:36
+    }
+}

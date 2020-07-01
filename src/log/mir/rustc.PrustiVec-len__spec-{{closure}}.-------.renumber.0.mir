@@ -1,0 +1,24 @@
+// MIR for `PrustiVec::len__spec::{{closure}}`
+// source = MirSource { def_id: DefId(0/1:17 ~ vec_verified[8787]::PrustiVec[0]::len__spec[0]::{{closure}}[0]), promoted: None }
+// pass_name = renumber
+// disambiguator = 0
+
+fn PrustiVec::len__spec::{{closure}}(_1: &'5rv [closure@/Users/karenhong/prusti-lib-support/src/vec_verified.rs:22:16: 22:27 result:&'6rv usize]) -> bool{
+    let mut _0: bool;                    // return place
+    let mut _2: usize;
+
+    bb0: {                              
+        StorageLive(_2);                 // bb0[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:22:16: 22:22
+        _2 = (*((*_1).0: &'4rv usize));  // bb0[1]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:22:16: 22:22
+        _0 = Ge(move _2, const 0usize);  // bb0[2]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:22:16: 22:27
+                                         // ty::Const
+                                         // + ty: usize
+                                         // + val: Value(Scalar(Bits { defined: 64, bits: 0 }))
+                                         // mir::Constant
+                                         // + span: /Users/karenhong/prusti-lib-support/src/vec_verified.rs:22:26: 22:27
+                                         // + ty: usize
+                                         // + literal: const 0usize
+        StorageDead(_2);                 // bb0[3]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:22:26: 22:27
+        return;                          // bb0[4]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:22:27: 22:27
+    }
+}

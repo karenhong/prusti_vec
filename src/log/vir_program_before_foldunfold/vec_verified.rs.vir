@@ -1,0 +1,41 @@
+method m_vec_verified$$main$opensqu$0$closesqu$(0 args)
+    returns (_0: Ref(tuple0$))
+{
+    __t0: Bool
+  label start // 0
+    // ========== start ==========
+    // Name: "vec_verified::main"
+    // Def path: "vec_verified::main[0]"
+    // Span: /Users/karenhong/prusti-lib-support/src/vec_verified.rs:30:1: 30:13
+    __t0 := copy false
+    // Preconditions:
+    inhale(Stmt) true
+    inhale(Stmt) true
+    inhale(Stmt) true
+    inhale(Expr) true
+    label pre
+    Goto(cfg:1)
+  label bb0 // 1
+    // ========== bb0 ==========
+    __t0 := copy true
+    // [mir] _0 = ()
+    _0 := builtin$havoc_ref()
+    inhale(Stmt) acc(tuple0$(_0), write)
+    // [mir] return
+    Goto(cfg:2)
+  label return // 2
+    // ========== return ==========
+    // Target of any 'return' statement.
+    // Exhale postcondition
+    // Fold predicates for &mut args and transfer borrow permissions to old
+    // Fold the result
+    obtain acc(tuple0$(_0), write)
+    assert(Expr) true
+    assert(Stmt) (tuple0$$inv<Ref(tuple0$),Bool>(_0)) && (true)
+    exhale true
+    exhale acc(tuple0$(_0), write)
+    Return
+  label end_of_method
+}
+
+

@@ -1,0 +1,13 @@
+// MIR for `main`
+// source = MirSource { def_id: DefId(0/0:26 ~ vec_verified[8787]::main[0]), promoted: None }
+// pass_name = renumber
+// disambiguator = 0
+
+fn main() -> (){
+    let mut _0: ();                      // return place
+
+    bb0: {                              
+        _0 = ();                         // bb0[0]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:30:11: 30:13
+        return;                          // bb0[1]: scope 0 at /Users/karenhong/prusti-lib-support/src/vec_verified.rs:30:13: 30:13
+    }
+}
