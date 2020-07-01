@@ -46,24 +46,18 @@ trait PrustiVec<T> : PrustiIndex<T> {
                 self.index(i) == result.get(i)"]
     fn as_slice(&self) -> &[T];
     // an implementation of `std::cmp::PartialEq` might be missing for `&'8rv T`
-}
 
-trait PrustiIndex<T> {
-    #[requires="index >= 0"]
+    // multiple applicable items in scope
     // #[requires="index < self.len()"]
     // #[ensures="after_expiry(
     //     self.len() == old(self.len()) &&
-    //     self.index(index) == before_expiry(*result) &&
     //     (
     //         forall i: usize :: (0 <= i && i < self.len()) ==>
     //         self.index(i) == old(self.index(i))
     //     )
     //     )"]
-    fn index(&self, index: usize) -> &T;
-}
+    // fn index(&self, index: usize) -> &T;
 
-trait PrustiMut<T> : PrustiIndex<T> {
-    #[requires="index >= 0"]
     // #[requires="index < self.len()"]
     // #[ensures="after_expiry(
     //     self.len() == old(self.len()) &&
@@ -73,6 +67,16 @@ trait PrustiMut<T> : PrustiIndex<T> {
     //         self.index(i) == old(self.index(i))
     //     )
     //     )"]
+    // fn index_mut(&mut self, index: usize) -> &mut T;
+}
+
+trait PrustiIndex<T> {
+    #[requires="index >= 0"]
+    fn index(&self, index: usize) -> &T;
+}
+
+trait PrustiMut<T> : PrustiIndex<T> {
+    #[requires="index >= 0"]
     fn index_mut(&mut self, index: usize) -> &mut T;
 }
 
